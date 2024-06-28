@@ -267,7 +267,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="23">
-                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="30"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="25"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -276,6 +276,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zek-yy-2bP"/>
+                                    <action selector="leftAction:" destination="9h7-Sl-QFl" eventType="touchUpInside" id="UOB-m7-f7h"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mt-zz-Mli">
@@ -288,7 +289,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="46">
-                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="30"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="25"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -297,6 +298,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RzI-i0-Vlu"/>
+                                    <action selector="rightAction:" destination="9h7-Sl-QFl" eventType="touchUpInside" id="Qkl-Ml-uOi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -315,8 +317,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="5vH-ew-jjx"/>
                     <connections>
-                        <outletCollection property="buttonsCollection" destination="6gQ-8q-Ht6" collectionClass="NSMutableArray" id="hil-mN-xhw"/>
-                        <outletCollection property="buttonsCollection" destination="1Mt-zz-Mli" collectionClass="NSMutableArray" id="Rjq-cK-27l"/>
+                        <outlet property="leftButton" destination="6gQ-8q-Ht6" id="Sat-IL-c6j"/>
+                        <outlet property="questionLabel" destination="sP3-ei-y8e" id="eWj-3l-rZR"/>
+                        <outlet property="rightButton" destination="1Mt-zz-Mli" id="b4a-yI-8Xl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVn-Kh-U5j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
