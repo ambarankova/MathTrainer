@@ -13,6 +13,7 @@ final class TrainViewController: UIViewController {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
     
     // MARK: - Properties
     let uiBuilder = UIBuilder()
@@ -102,19 +103,25 @@ final class TrainViewController: UIViewController {
     
     private func check(answer: String, for button: UIButton) {
         let isRightAnswer = Int(answer) == self.answer
-        
-        button.backgroundColor = isRightAnswer ? .systemGreen : .systemRed
+        button.backgroundColor = isRightAnswer ? .green : .red
         
         if isRightAnswer {
-            let isSecondAttempt = rightButton.backgroundColor == .systemRed || leftButton.backgroundColor == .systemRed
+            let isSecondAttempt = (rightButton.backgroundColor == .red) || (leftButton.backgroundColor == .red)
             
-            count += isSecondAttempt ? 0 : 1
+            if isSecondAttempt == false {
+                count += 1
+            }
+            
+            // count += isSecondAttempt ? 0 : 1
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.configureQuestion()
                 self?.configureButtons()
             }
         }
+        
+        countLabel.text = "Очков: \(count)"
+        
     }
 }
 

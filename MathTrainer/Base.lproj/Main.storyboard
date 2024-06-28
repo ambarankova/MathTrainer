@@ -215,6 +215,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addCountLabel" destination="KUK-vY-cjc" id="ViM-BT-Uv3"/>
                         <outletCollection property="buttonsCollection" destination="Mr5-BH-eAA" collectionClass="NSMutableArray" id="ffz-61-p90"/>
                         <outletCollection property="buttonsCollection" destination="yAF-J5-bIl" collectionClass="NSMutableArray" id="pOh-sE-wKV"/>
                         <outletCollection property="buttonsCollection" destination="mW0-WB-7xl" collectionClass="NSMutableArray" id="iK8-65-JZE"/>
@@ -301,15 +302,30 @@
                                     <action selector="rightAction:" destination="9h7-Sl-QFl" eventType="touchUpInside" id="Qkl-Ml-uOi"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Очков:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1f-iJ-frV">
+                                <rect key="frame" x="293" y="57" width="50" height="18"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SjB-Iu-UqY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1Mt-zz-Mli" firstAttribute="centerX" secondItem="cba-gd-ezE" secondAttribute="centerX" constant="60" id="4me-KQ-me7"/>
                             <constraint firstItem="Hrv-kd-4Ze" firstAttribute="leading" secondItem="SjB-Iu-UqY" secondAttribute="leading" constant="50" id="7la-9r-dYu"/>
+                            <constraint firstItem="E1f-iJ-frV" firstAttribute="centerY" secondItem="Hrv-kd-4Ze" secondAttribute="centerY" id="LNe-Nh-KWZ">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="1Mt-zz-Mli" firstAttribute="centerY" secondItem="6gQ-8q-Ht6" secondAttribute="centerY" id="Pdx-wy-PJO"/>
                             <constraint firstItem="6gQ-8q-Ht6" firstAttribute="top" secondItem="sP3-ei-y8e" secondAttribute="bottom" constant="120" id="XJm-G0-ic5"/>
                             <constraint firstItem="sP3-ei-y8e" firstAttribute="centerX" secondItem="cba-gd-ezE" secondAttribute="centerX" id="ZhJ-j5-3Te"/>
+                            <constraint firstItem="SjB-Iu-UqY" firstAttribute="trailing" secondItem="E1f-iJ-frV" secondAttribute="trailing" constant="50" id="eHE-jM-CEz"/>
                             <constraint firstItem="sP3-ei-y8e" firstAttribute="centerY" secondItem="cba-gd-ezE" secondAttribute="centerY" constant="-30" id="fEr-7e-iGC"/>
                             <constraint firstItem="Hrv-kd-4Ze" firstAttribute="top" secondItem="SjB-Iu-UqY" secondAttribute="top" constant="50" id="gnh-kz-okR"/>
                             <constraint firstItem="6gQ-8q-Ht6" firstAttribute="centerX" secondItem="cba-gd-ezE" secondAttribute="centerX" constant="-60" id="jT4-xY-Jta"/>
@@ -317,6 +333,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5vH-ew-jjx"/>
                     <connections>
+                        <outlet property="countLabel" destination="E1f-iJ-frV" id="Met-DX-cUh"/>
                         <outlet property="leftButton" destination="6gQ-8q-Ht6" id="Sat-IL-c6j"/>
                         <outlet property="questionLabel" destination="sP3-ei-y8e" id="eWj-3l-rZR"/>
                         <outlet property="rightButton" destination="1Mt-zz-Mli" id="b4a-yI-8Xl"/>

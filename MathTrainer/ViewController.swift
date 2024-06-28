@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet var buttonsCollection: [UIButton]!
+    @IBOutlet weak var addCountLabel: UILabel!
     
     // MARK: - Properties
     var selectedType: MathType = .add
