@@ -14,6 +14,7 @@
 		CD5750552C2B0F7B00C886A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5750542C2B0F7B00C886A6 /* Assets.xcassets */; };
 		CD5750582C2B0F7B00C886A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5750562C2B0F7B00C886A6 /* LaunchScreen.storyboard */; };
 		CD87F6C72C2B3585004CDE5D /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87F6C62C2B3585004CDE5D /* TrainViewController.swift */; };
+		CDE763202C2F268F006467E4 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7631F2C2F268F006467E4 /* Count.swift */; };
 		FAD5C9B12C2DD36D001CE751 /* UIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5C9B02C2DD36D001CE751 /* UIBuilder.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		CD5750572C2B0F7B00C886A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD5750592C2B0F7B00C886A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD87F6C62C2B3585004CDE5D /* TrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
+		CDE7631F2C2F268F006467E4 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		FAD5C9B02C2DD36D001CE751 /* UIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 				CD57504F2C2B0F7A00C886A6 /* ViewController.swift */,
 				CD87F6C62C2B3585004CDE5D /* TrainViewController.swift */,
 				FAD5C9B02C2DD36D001CE751 /* UIBuilder.swift */,
+				CDE7631F2C2F268F006467E4 /* Count.swift */,
 				CD5750512C2B0F7A00C886A6 /* Main.storyboard */,
 				CD5750542C2B0F7B00C886A6 /* Assets.xcassets */,
 				CD5750562C2B0F7B00C886A6 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				CD87F6C72C2B3585004CDE5D /* TrainViewController.swift in Sources */,
 				CD57504C2C2B0F7A00C886A6 /* AppDelegate.swift in Sources */,
 				CD57504E2C2B0F7A00C886A6 /* SceneDelegate.swift in Sources */,
+				CDE763202C2F268F006467E4 /* Count.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

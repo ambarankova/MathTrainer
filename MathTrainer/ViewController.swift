@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet var buttonsCollection: [UIButton]!
+    @IBOutlet weak var addCountLabel: UILabel!
+    @IBOutlet weak var subtractCountLabel: UILabel!
+    @IBOutlet weak var multiplyCountLabel: UILabel!
+    @IBOutlet weak var divideCountLabel: UILabel!
     
     // MARK: - Properties
     var selectedType: MathType = .add
@@ -26,6 +30,10 @@ class ViewController: UIViewController {
 
         uiBuilder.configureButton(buttonsCollection)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        printing()
+    }
 
     // MARK: - Methods
     
@@ -34,6 +42,13 @@ class ViewController: UIViewController {
             viewController.type = selectedType
         }
     }
+    
+    func printing() {
+            addCountLabel.text = count.printingAdd()
+            subtractCountLabel.text = count.printingSubtract()
+            multiplyCountLabel.text = count.printingMultiply()
+            divideCountLabel.text = count.printingDivide()
+        }
 
     // MARK: - IBActions
     @IBAction func buttonsAction(_ sender: UIButton) {
