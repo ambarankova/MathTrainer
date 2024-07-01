@@ -6,6 +6,7 @@
 //
 
 import UIKit
+var count = Count()
 
 final class TrainViewController: UIViewController {
     
@@ -32,11 +33,6 @@ final class TrainViewController: UIViewController {
     private var firstNumber = 0
     private var secondNumber = 0
     private var sign = ""
-    private var count = 0 {
-        didSet {
-            print("Count: \(count)")
-        }
-    }
     
     private var answer: Int {
         switch type {
@@ -62,9 +58,11 @@ final class TrainViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func leftAction(_ sender: UIButton) {
         check(answer: sender.titleLabel?.text ?? "", for: sender)
+        printScore()
     }
     @IBAction func rightAction(_ sender: UIButton) {
         check(answer: sender.titleLabel?.text ?? "", for: sender)
+        printScore()
     }
     
     // MARK: - Methods
@@ -107,11 +105,20 @@ final class TrainViewController: UIViewController {
         
         if isRightAnswer {
             let isSecondAttempt = (rightButton.backgroundColor == .red) || (leftButton.backgroundColor == .red)
-            
             if isSecondAttempt == false {
-                count += 1
+                switch type {
+                case .add:
+                    count.countAdd += 1
+                case .subtract:
+                    count.countSubtract += 1
+                case .multiply:
+                    count.countMultiply += 1
+                case .divide:
+                    count.countDivide += 1
+                }
             }
             
+            // Почему подсчет неверный?
             // count += isSecondAttempt ? 0 : 1
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
@@ -119,9 +126,19 @@ final class TrainViewController: UIViewController {
                 self?.configureButtons()
             }
         }
-        
-        countLabel.text = "Очков: \(count)"
-        
+    }
+    
+    private func printScore() {
+        switch type {
+            case .add:
+            countLabel.text = count.printingAdd()
+            case .subtract:
+            countLabel.text = count.printingSubtract()
+            case .multiply:
+            countLabel.text = count.printingMultiply()
+            case .divide:
+            countLabel.text = count.printingDivide()
+            }
     }
 }
 
