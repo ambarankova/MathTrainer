@@ -40,6 +40,8 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? TrainViewController {
             viewController.type = selectedType
+            /// Подпишемся под делегата
+            viewController.delegate = self
         }
     }
     
@@ -59,3 +61,11 @@ class ViewController: UIViewController {
     @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) { }
 }
 
+/// Подпишемся под протокол делегата и реализуем метод, теперь при изменении данные будут передаваться
+extension ViewController: TrainViewControllerDelegate {
+    /// Этот метод будет срабатывать каждый раз когда меняется счет
+    func send(count: Int) {
+        /// Тут можно теперь настроить лейблы что бы отображали каунт и добавить логики
+        print(count)
+    }
+}

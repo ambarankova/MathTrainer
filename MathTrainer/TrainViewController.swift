@@ -6,9 +6,25 @@
 //
 
 import UIKit
+
+/// Не создавай экземпрляры в не класса / структуры. Это создает объект в глобальной области видимости
+/// Для того что бы передать данные с одного экрана на другой есть несколько подходов:
+/// Реактивное программирование (нативный от эпл - Combine), делегаты (Delegate)  и кложуры (Closures)
+/// Почитай про делегаты и кложуры, тема немного сложная но !обязательно! нужна. На работе будет использоваться очень часто
+/// Ссылка на мою статью о делегатах: https://habr.com/ru/articles/703232/, о кложурах не писал, но примеров в интернете оч много, погугли
+/// Почему сейчас не работает передача данных? Объект не хранится нигде в памяти в момент закрытия контроллера
+/// Ниже напишу пример с делегатом
 var count = Count()
 
+/// AnyObject нужен что бы объявить свойство делегата в классе
+protocol TrainViewControllerDelegate: AnyObject {
+    func send(count: Int)
+}
+
 final class TrainViewController: UIViewController {
+    
+    /// Объявим свойство, обязательно! weak что бы не создать цикл сильных ссылок
+    weak var delegate: TrainViewControllerDelegate?
     
     // MARK: - IBOutlets
     @IBOutlet weak var leftButton: UIButton!
@@ -132,12 +148,16 @@ final class TrainViewController: UIViewController {
         switch type {
             case .add:
             countLabel.text = count.printingAdd()
+            delegate?.send(count: count.countAdd)
             case .subtract:
             countLabel.text = count.printingSubtract()
+            delegate?.send(count: count.countSubtract)
             case .multiply:
             countLabel.text = count.printingMultiply()
+            delegate?.send(count: count.countMultiply)
             case .divide:
             countLabel.text = count.printingDivide()
+            delegate?.send(count: count.countDivide)
             }
     }
 }
