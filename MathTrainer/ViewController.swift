@@ -67,5 +67,11 @@ extension ViewController: TrainViewControllerDelegate {
     func send(count: Int) {
         /// Тут можно теперь настроить лейблы что бы отображали каунт и добавить логики
         print(count)
+        switch selectedType {
+        case .add: addCountLabel.text = "Score: \(count)"
+        case .subtract: subtractCountLabel.text = "Score: \(count)"
+        case .multiply: multiplyCountLabel.text = "Score: \(count)"
+        case .divide: divideCountLabel.text = "Score: \(count)"
+        }
     }
 }
